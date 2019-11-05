@@ -11,7 +11,7 @@
     {{ if .Site.Params.featured_tags }}
     <section>
         <hr class="hidden-sm hidden-xs">
-        <h5>TAGS</h5>
+        <h5>Dans de ce blog :</h5>
         <div class="tags">
             {{ $featured_condition_size := .Site.Params.featured_condition_size }} 
             {{ range $name, $taxonomy := .Site.Taxonomies.tags }}
@@ -28,10 +28,16 @@
     <!-- Short About -->
 	{{ if .Site.Params.about_me }}
     <section class="visible-md visible-lg">
+	<hr>
+	<!-- MM, traduction, pas de page about
 	<hr><h5><a href="{{ "/top/about" | relLangURL }}">ABOUT ME</a></h5>
+	-->
         <div class="short-about">
             {{ with .Site.Params.sidebar_avatar }}
+	    <!-- MM, pas de page about
             <a href="{{ "/top/about" | relLangURL }}">
+	    -->
+            <a href="{{ "https://4next.ch" | relLangURL }}">
                <img src="{{ . | relURL }}" alt="avatar" style="cursor: pointer" />
             </a>
             {{ end }}
